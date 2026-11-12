@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b12">
+<title>Motaharul.BD — Fast Link</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090b12;--panel:#111521;--muted:#929bad;--line:rgba(255,255,255,.09);--white:#f7f8fc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--white);font-family:"DM Sans",sans-serif;background:radial-gradient(ellipse at 50% -15%,rgba(77,91,180,.28),transparent 48%),radial-gradient(ellipse at 100% 55%,rgba(91,48,135,.13),transparent 38%),var(--bg);padding:28px 16px 36px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+.wrap{width:min(100%,620px);margin:auto;position:relative}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin:0 2px 22px}
+.brand{font:700 17px "Space Grotesk",sans-serif;letter-spacing:.4px}
+.brand b{color:#9a8cff}
+.top-label{font-size:10px;letter-spacing:1.7px;color:#8993a8;border:1px solid var(--line);padding:7px 10px;border-radius:30px}
+.hero{position:relative;overflow:hidden;text-align:center;padding:32px 22px 27px;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:linear-gradient(145deg,rgba(35,42,65,.94),rgba(17,20,31,.96) 60%,rgba(30,23,48,.92));box-shadow:0 24px 70px rgba(0,0,0,.32)}
+.hero:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#7766ff;filter:blur(100px);opacity:.18;top:-180px;left:calc(50% - 130px)}
+.avatar-wrap{width:122px;height:122px;margin:0 auto 16px;padding:4px;border-radius:50%;background:linear-gradient(135deg,#72e4ff,#8b7bff,#e58bff);box-shadow:0 0 0 7px rgba(255,255,255,.035),0 12px 35px rgba(93,115,255,.24);position:relative}
+.avatar{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 30%;border:3px solid #151827;background:#222}
+.hero h1{font:700 clamp(25px,6vw,31px) "Space Grotesk",sans-serif;margin:0;letter-spacing:-.8px}
+.handle{font-size:13px;color:#aab3c5;margin-top:6px}
+.bio{font-size:12px;color:#c0c6d3;line-height:1.7;max-width:360px;margin:14px auto 0}
+.pill{display:inline-flex;align-items:center;gap:8px;margin-top:17px;padding:8px 13px;border:1px solid rgba(120,225,183,.2);background:rgba(65,190,140,.08);border-radius:30px;color:#9be8c7;font-size:10px;letter-spacing:.4px}
+.pill i{width:6px;height:6px;border-radius:50%;background:#69e5ae;box-shadow:0 0 10px #69e5ae}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:28px 3px 13px}
+.section-head h2{font:600 12px "Space Grotesk",sans-serif;letter-spacing:2px;color:#cbd1df;margin:0}
+.section-head span{font-size:10px;color:#788297}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.link-card{min-width:0;display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white);padding:14px 12px;border:1px solid var(--line);border-radius:19px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:0 8px 22px rgba(0,0,0,.13);transition:transform .22s ease,border-color .22s ease,background .22s ease}
+.link-card:hover{transform:translateY(-3px);border-color:rgba(151,139,255,.48);background:linear-gradient(145deg,rgba(110,103,190,.16),rgba(255,255,255,.04))}
+.thumb{width:48px;height:48px;flex:0 0 48px;border-radius:15px;display:grid;place-items:center;overflow:hidden;background:#20283b;border:1px solid rgba(255,255,255,.1)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb.brand-icon svg{width:25px;height:25px;display:block}
+.thumb.telegram{background:#142d40}.thumb.facebook{background:#142b55}.thumb.tiktok{background:#171a21}.thumb.youtube{background:#421b22}.thumb.xbrand{background:#17191f}.thumb.web{background:#292044}
+.info{min-width:0;flex:1}
+.info strong{display:block;font-size:12px;font-weight:700;line-height:1.35}
+.info small{display:block;font-size:10px;color:#929caf;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.go{color:#7e8ba4;font-size:20px;margin-left:auto;line-height:1}
+.footer{text-align:center;margin:25px 0 0;color:#737d91;font-size:10px;line-height:1.9}
+.footer b{color:#b5aaff;font-weight:600}
+@media(max-width:440px){body{padding:18px 12px 28px}.links{gap:9px}.link-card{padding:11px 9px;gap:9px;border-radius:16px}.thumb{width:42px;height:42px;flex-basis:42px;border-radius:13px}.info strong{font-size:11px}.info small{font-size:9px}.go{font-size:18px}.hero{padding:28px 16px 24px}}
+@media(max-width:350px){.links{grid-template-columns:1fr}.link-card{padding:12px}.info strong{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="topbar">
+    <div class="brand">FAST <b>LINK.</b></div>
+    <div class="top-label">MY DIGITAL SPACE</div>
+  </header>
+
+  <section class="hero">
+    <div class="avatar-wrap">
+      <img class="avatar" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmjhO-M3rDvNFrm0YmgqBgMJmBjltIJcxxcNSanjqiJxEcHOmQbLkiVqKcqSRH_8SkORmh3zS5fnOpCcmFZqbrCQWTbwLIY4HI_xl-FpQafezT4IxBdHNVlaScsacb36I2PCw9GT8-q0zEWqb5Ycr73prWhCgmuZ6Yl9iWaZEVIkMgXo_5gaxA02jk5Olp/s736/6111.jpg" alt="Motaharul profile photo">
+    </div>
+    <h1>Motaharul.BD</h1>
+    <div class="handle">@motaharulbd</div>
+    <p class="bio">Welcome to my official space. Follow my social channels and stay connected.</p>
+    <div class="pill"><i></i> OFFICIAL SOCIAL LINKS</div>
+  </section>
+
+  <div class="section-head">
+    <h2>CONNECT WITH ME</h2>
+    <span>09 LINKS</span>
+  </div>
+
+  <section class="links">
+    <a class="link-card" href="https://t.me/apk_motaharul_pro" target="_blank" rel="noopener noreferrer">
+      <span class="thumb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiooSImNompYiCCUJbw2Y8O9uJzfJ09sInb6RdBTP2qLFRYP9NO4guvRUpQwAaJqjEBtrQwe9NkNkkZsQpnDXZzOhtT1TV3frcObBVlAxbV5P9xVKUqfPjMR72U-OEIkalzthEnCz7Hum7bkfYQgdPrXrU7UYZ5r5aLpRziqYHiWb_r0lRSDG2HWrHK1cr9/s320/6106.jpg" alt=""></span>
+      <span class="info"><strong>Telegram Channel</strong><small>@apk_motaharul_pro</small></span><span class="go">›</span>
+    </a>
+
+    <a class="link-card" href="https://www.facebook.com/share/1Fa5oGqF1U/" target="_blank" rel="noopener noreferrer">
+      <span class="thumb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifaP0GXgt4q8WPyCTNmRQtuuZbMJWZjKOqLMt_fz9qgaoSWwHuvRkJJfBJs8567qfB3E5UOqUte8vV0JNEV_Uoefc5XBunLpOT00HAZaBpFFZiOBYB07pC0TnNAWpEQ5sl9mcEfeYZNEQAORwJmAse4tGCV5oe0RaTQNqOneJ_b55QoR2pFM1DN-GFpfZm/s320/6107.jpg" alt=""></span>
+      <span class="info"><strong>Facebook</strong><small>Personal profile</small></span><span class="go">›</span>
+    </a>
+
+    <a class="link-card" href="https://www.tiktok.com/@mdmotaharul507mmt" target="_blank" rel="noopener noreferrer">
+      <span class="thumb brand-icon tiktok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25F4EE" d="M16.6 2c.3 2.5 1.7 4 4.4 4.2v3.4a9 9 0 0 1-4.4-1.3v7.1a6.6 6.6 0 1 1-6.6-6.6c.4 0 .8 0 1.2.1v3.6a3.2 3.2 0 1 0 2.1 3V2z"/><path fill="#FE2C55" d="M14.6 3.1c.3 2.5 1.7 4 4.4 4.2v2.3a9 9 0 0 1-4.4-1.3v7.1a6.6 6.6 0 0 1-6.6 6.6 6.4 6.4 0 0 1-2.2-.4 6.5 6.5 0 0 0 8.8-6.1V3.1z"/><path fill="#fff" d="M14.6 2h2c.3 2.5 1.7 4 4.4 4.2v2a7.1 7.1 0 0 1-6.4-4.1zM11.2 8.9v2.8a3.2 3.2 0 1 0 2.1 3v-12h1.3v12.7a4.5 4.5 0 1 1-4.5-4.5c.4 0 .8 0 1.1.1z"/></svg></span>
+      <span class="info"><strong>TikTok</strong><small>@mdmotaharul507mmt</small></span><span class="go">›</span>
+    </a>
+
+    <a class="link-card" href="https://motaharulzbd.blogspot.com" target="_blank" rel="noopener noreferrer">
+      <span class="thumb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga9yVTkffXgxPC0d6yGzYeMiVIonMwsXCwNw6BqUrKBLjxWgXV1YWpAyBgEhiWfC95eydkpSVfkZmen_9xhlkFi3rSdOkLJ_9Q_ysJJ4n1RG-ecUsOjBCi_zM9kWj_yicNeAZH70ujgbijCoHpylKIvj-kD8DX0xqlphaBphI8g2737O9cxYedWB-5UEKs/s320/6105.png" alt=""></span>
+      <span class="info"><strong>My Website</strong><small>Motaharul.BD</small></span><span class="go">›</span>
+    </a>
+
+    <a class="link-card" href="https://x.com/motaharulbd" target="_blank" rel="noopener noreferrer">
+      <span class="thumb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmjhO-M3rDvNFrm0YmgqBgMJmBjltIJcxxcNSanjqiJxEcHOmQbLkiVqKcqSRH_8SkORmh3zS5fnOpCcmFZqbrCQWTbwLIY4HI_xl-FpQafezT4IxBdHNVlaScsacb36I2PCw9GT8-q0zEWqb5Ycr73prWhCgmuZ6Yl9iWaZEVIkMgXo_5gaxA02jk5Olp/s320/6111.jpg" alt=""></span>
+      <span class="info"><strong>X / Twitter</strong><small>@motaharulbd</small></span><span class="go">›</span>
+    </a>
+
+    <a class="link-card" href="https://t.me/apk_fast_pro" target="_blank" rel="noopener noreferrer">
+      <span class="thumb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTPAb767Z-fKELaPrEiBIWd7kknRh4Y4SPvsByCrECajjMxYluE9AXFfQwg0XO3oYzQvj2iKtMDr_UTXQVcU9SMW7FKiZmt5DP5RhjDd2qVyk5IlFqyNdHAhWc9v-iRxXN0AHC_ePC-O79PiMwGDi8GVaNEUL6FNVCGGXsbNBU4qGPk3rqh2vKgVq7vUKK/s320/6081.jpg" alt=""></span>
+      <span class="info"><strong>APK Fast Pro</strong><small>Telegram Channel</small></span><span class="go">›</span>
+    </a>
+
+    <a class="link-card" href="https://www.tiktok.com/@apk.motaharul.pro" target="_blank" rel="noopener noreferrer">
+      <span class="thumb brand-icon tiktok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25F4EE" d="M16.6 2c.3 2.5 1.7 4 4.4 4.2v3.4a9 9 0 0 1-4.4-1.3v7.1a6.6 6.6 0 1 1-6.6-6.6c.4 0 .8 0 1.2.1v3.6a3.2 3.2 0 1 0 2.1 3V2z"/><path fill="#FE2C55" d="M14.6 3.1c.3 2.5 1.7 4 4.4 4.2v2.3a9 9 0 0 1-4.4-1.3v7.1a6.6 6.6 0 0 1-6.6 6.6 6.4 6.4 0 0 1-2.2-.4 6.5 6.5 0 0 0 8.8-6.1V3.1z"/><path fill="#fff" d="M14.6 2h2c.3 2.5 1.7 4 4.4 4.2v2a7.1 7.1 0 0 1-6.4-4.1zM11.2 8.9v2.8a3.2 3.2 0 1 0 2.1 3v-12h1.3v12.7a4.5 4.5 0 1 1-4.5-4.5c.4 0 .8 0 1.1.1z"/></svg></span>
+      <span class="info"><strong>TikTok 2</strong><small>@apk.motaharul.pro</small></span><span class="go">›</span>
+    </a>
+
+    <a class="link-card" href="https://www.youtube.com/@Comedy-Bangla-Music" target="_blank" rel="noopener noreferrer">
+      <span class="thumb brand-icon youtube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6z"/></svg></span>
+      <span class="info"><strong>YouTube</strong><small>Comedy Bangla Music</small></span><span class="go">›</span>
+    </a>
+
+    <a class="link-card" href="https://www.facebook.com/share/1Pd3KQxD21/" target="_blank" rel="noopener noreferrer">
+      <span class="thumb brand-icon facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21z"/></svg></span>
+      <span class="info"><strong>Facebook 2</strong><small>Facebook profile</small></span><span class="go">›</span>
+    </a>
+  </section>
+
+  <footer class="footer"><b>FAST LINK</b> · A little place for all my socials<br>© 2026 Motaharul.BD</footer>
+</main>
+</body>
+</html>
